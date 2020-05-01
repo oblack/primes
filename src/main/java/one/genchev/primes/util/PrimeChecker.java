@@ -10,8 +10,8 @@ public class PrimeChecker {
 
     /**
      * Check if input number is prime
-     * @param input
-     * @return
+     * @param input - input integer
+     * @return - true if input is prime, false if not
      */
     public boolean isPrime(Integer input) {
         if(input % 2 == 0)
@@ -28,9 +28,9 @@ public class PrimeChecker {
     }
 
     /**
-     * Return the closes prime number, bigger than the input number
-     * @param input
-     * @return
+     * Return the closest prime number, bigger than the input number
+     * @param input - input integer
+     * @return - return the closest bigger than input prime integer
      */
     public Integer findNextPrime(Integer input) {
         Integer result = input+1;

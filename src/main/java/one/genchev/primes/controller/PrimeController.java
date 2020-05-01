@@ -36,7 +36,6 @@ public class PrimeController {
 
     @GetMapping("/next/{input}")
     public ResponseEntity<String> getNextPrime(@PathVariable Integer input) {
-
         if(input <= 1)
             return new ResponseEntity<>("Input number must be between 1 and 2147483647", new HttpHeaders(), HttpStatus.BAD_REQUEST);
 
