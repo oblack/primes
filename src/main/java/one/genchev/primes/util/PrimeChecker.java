@@ -8,14 +8,28 @@ public class PrimeChecker {
     //TODO: Check if performance is optimal
 
     public boolean isPrime(Integer input) {
-        long divisor = input -1;
-        while (divisor > 1) {
-            if ((input % divisor) == 0) {
+
+        if(input % 2 == 0)
+            return false;
+
+        int divisor = 3;
+
+        while(divisor * divisor <= input) {
+            if(input % divisor == 0) {
                 return false;
             }
-            divisor --;
+            divisor += 2;
         }
         return true;
+//
+//
+//        while (divisor > 1) {
+//            if ((input % divisor) == 0) {
+//                return false;
+//            }
+//            divisor --;
+//        }
+//        return true;
     }
 
     public Integer findNextPrime(Integer input) {
