@@ -14,23 +14,23 @@ public class PrimeController {
     private final PrimeChecker primeChecker;
 
     @GetMapping("/{input}")
-    public Long checkPrime(@PathVariable Long input) {
+    public Integer checkPrime(@PathVariable Integer input) {
 
         //TODO: Check input
         // - Should not be text, negative, or complex number, only positive integers
-        // - Cannot be larger than ..... (size of input type)
+        // - Cannot be larger than 2147483647 (size of input type)
         // - Should be larger than 1
 
         if (primeChecker.isPrime(input)) {
             return input;
         }
         else {
-            return 1L;
+            return 1;
         }
     }
 
     @GetMapping("/next/{input}")
-    public Long getNextPrime(@PathVariable Long input) {
-        return 34L;
+    public Integer getNextPrime(@PathVariable Integer input) {
+        return 34;
     }
 }
