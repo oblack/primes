@@ -17,3 +17,11 @@
     git clone https://github.com/oblack/primes.git
     cd primes
     docker-compose up
+    Http Security
+        default username: user
+        default password: pass
+    
+## Swagger UI
+    swagger-ui documentation available at .../doc/swagger-ui.html
+    needs http security credentials
+   
