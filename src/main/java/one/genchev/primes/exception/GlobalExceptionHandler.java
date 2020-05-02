@@ -1,7 +1,6 @@
 package one.genchev.primes.exception;
 
 import one.genchev.primes.controller.Response;
-import org.springframework.beans.ConversionNotSupportedException;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
