@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
  * Methods for determining prime numbers
  */
 @Component
-public class PrimeChecker {
+public class PrimeNumberUtils {
 
     /**
      * Check if input number is prime
