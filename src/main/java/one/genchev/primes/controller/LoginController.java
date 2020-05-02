@@ -7,15 +7,14 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 
-@RestController
-@RequestMapping("/primes")
+
 @RequiredArgsConstructor
 @Deprecated
 public class LoginController {
 
     private final UserRepository userRepository;
 
-    @GetMapping("/login")
+//    @GetMapping("/login")
     public String login(@PathVariable String email, @PathVariable String password) {
         User persistedUser = userRepository.findByEmail(email);
         if(persistedUser.getPassword().equals(password)) {
@@ -27,10 +26,10 @@ public class LoginController {
         }
     }
 
-    @PostMapping("/register")
+//    @PostMapping("/register")
     public String register(@PathVariable String name, @PathVariable String email, @PathVariable String password) {
         User user = new User(name, email, password);
-        userRepository.save(user);
+//        userRepository.save(user);
         return "Not registered";
     }
 }
