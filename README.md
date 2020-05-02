@@ -21,6 +21,7 @@
     git clone https://github.com/oblack/primes.git
     cd primes
     docker-compose up
+        - will run on port 8082
     
 ## Access the running service
     Http Security
