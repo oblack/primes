@@ -2,11 +2,7 @@
 
 ## Limitations
     Skipping HTTPS
-    User only has simple credentials
-    Path variables used for registration & login
-    Skipping Validation on input email format
-    Skipping User ID's
-    User Registration is simple
+    User Authentication is simple
     Skip enforcing unique emails
     Possible to have null-pointer in authentication filter, but accounted for
 
@@ -17,9 +13,13 @@
     git clone https://github.com/oblack/primes.git
     cd primes
     docker-compose up
+    
+## Security
     Http Security
         default username: user
         default password: pass
+    REST security
+        Bearer token: auth_token_123
     
 ## Swagger UI
     swagger-ui documentation available at .../doc/swagger-ui.html
