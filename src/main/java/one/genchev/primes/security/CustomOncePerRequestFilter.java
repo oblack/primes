@@ -28,7 +28,6 @@ public class CustomOncePerRequestFilter extends OncePerRequestFilter {
                 UsernamePasswordAuthenticationToken springAuthToken = new UsernamePasswordAuthenticationToken(
                         authenticatedUser.getUsername(), null, AuthorityUtils.createAuthorityList("ROLE_USER"));
                 springAuthToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-//                springAuthToken.setAuthenticated(true);
                 SecurityContextHolder.getContext().setAuthentication(springAuthToken);
             }
             else {
@@ -41,15 +40,12 @@ public class CustomOncePerRequestFilter extends OncePerRequestFilter {
     }
 
     /**
-     * Make a request to the external authentication service
-     * @return
+     * Authenticate based on the token
+     * @return a user object or null
      */
     private User authenticate(String token) {
-
-        //No authentication at the moment
-
         if(token.equals("auth_token_123"))
-            return new User("username", "password", Collections.emptyList());
+            return new User("default_username", "default_password", Collections.emptyList());
         else
             return null;
     }
