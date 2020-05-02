@@ -14,6 +14,6 @@
     Task specifications - next prime number
     
 ## Run the app
-    git clone ......
-    cd .....
-    docker.....
+    git clone https://github.com/oblack/primes.git
+    cd primes
+    docker-compose up
