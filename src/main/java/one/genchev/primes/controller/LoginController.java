@@ -10,6 +10,7 @@ import java.util.Arrays;
 @RestController
 @RequestMapping("/primes")
 @RequiredArgsConstructor
+@Deprecated
 public class LoginController {
 
     private final UserRepository userRepository;

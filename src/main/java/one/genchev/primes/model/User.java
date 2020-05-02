@@ -10,6 +10,7 @@ import java.util.List;
 @Data
 @Document
 @AllArgsConstructor
+@Deprecated
 public class User {
 
     private String email;
