@@ -1,6 +1,8 @@
 package one.genchev.primes.exception;
 
 import one.genchev.primes.controller.Response;
+import org.springframework.beans.ConversionNotSupportedException;
+import org.springframework.beans.TypeMismatchException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +24,13 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
                         Arrays.asList("Invalid input. Please revise.")), HttpStatus.BAD_REQUEST);
     }
 
+    @Override
+    protected ResponseEntity<Object> handleTypeMismatch(TypeMismatchException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
+        return new ResponseEntity<>(
+                new Response("Invalid input. Please revise.", "400",
+                        Arrays.asList("Invalid input. Please revise.")), HttpStatus.BAD_REQUEST);
+    }
+
     @ExceptionHandler(Exception.class)
     public final ResponseEntity<Object> handleAllExceptions(Exception ex, WebRequest webRequest) {
         return new ResponseEntity<>(
@@ -30,5 +39,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
                         "404",
                         Arrays.asList("Unexpected exception occurred: " + ex.getMessage())), HttpStatus.NOT_FOUND);
     }
+
+
 
 }
