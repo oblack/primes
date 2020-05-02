@@ -27,8 +27,8 @@ public class LoginController {
     }
 
     @PostMapping("/register")
-    public String register(@PathVariable String name, @PathVariable String email, @PathVariable String password, @PathVariable String role) {
-        User user = new User(name, email, password, role);
+    public String register(@PathVariable String name, @PathVariable String email, @PathVariable String password) {
+        User user = new User(name, email, password);
         userRepository.save(user);
         return "Not registered";
     }
